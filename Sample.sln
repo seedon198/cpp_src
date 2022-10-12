@@ -1,6 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
+# comment
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample", "Sample.vcxproj", "{97E29E33-53DE-435D-A36F-F64DAA466042}"
 EndProject
 Global
