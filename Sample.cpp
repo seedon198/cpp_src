@@ -1,13 +1,31 @@
-// Sample.cpp : Defines the entry point for the console application.
-//
+#include <cstdlib>
+#include <cstring>
+#include <iostream>
 
-#include "stdafx.h"
-#include "stdlib.h"
+using namespace std;
 
+class Shell {
 
-int _tmain(int argc, const char* argv[])
-{
-	system( argv[0] );
-	return 0;
+public:
+
+        Shell() {
+                char *cmd = new char[256];
+                const char *safe = "safe_program ";
+                int returnCode;
+                while (1) {
+                        cout << "Enter command: ";
+                        cin.getline(cmd, 256);
+                        if (strncmp(cmd, safe, strlen(safe)) != 0) {
+                                cout << "Unsafe command entered\n";
+                                break;
+                        }
+                        returnCode = system(cmd);
+                        cout << "Command returned " << returnCode << '\n';
+                }
+        }
+};
+
+int main() {
+        new Shell();
+        return 0;
 }
-
